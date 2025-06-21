@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Webpack cache
+.cache/
+webpack.cache/
+
+# Tailwind generated output (if any)
+*.css.txt
+
+# Temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment files
+.env
+.env.*.local
+
+# VSCode settings (optional)
+.vscode/
+
+# Mac system files
+.DS_Store
+
+# Linux trash folder
+.Trash-*
+
+# Windows system files
+Thumbs.db
