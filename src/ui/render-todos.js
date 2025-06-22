@@ -45,9 +45,20 @@ export function renderTodos() {
         title.classList.add("text-xl", "font-bold")
         const description = document.createElement('p');
         description.textContent = todo.description;
-        description.classList.add("text-gray-600")
+        description.classList.add("text-gray-600");
+
+        let formatted_date;
+
+        if (todo.due_date) {
+            formatted_date = new Date(todo.due_date).toLocaleDateString('en-GB', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+            });
+        }
+
         const due_date = document.createElement('p');
-        due_date.textContent = todo.due_date;
+        due_date.textContent = formatted_date;
         const priority = document.createElement('p');
         priority.classList.add("px-2", "py-1", "text-s")
         priority.textContent = todo.priority;
@@ -111,7 +122,7 @@ export function renderTodos() {
 
         mainDetails.append(title, description)
         leftContent.append(checkbox, mainDetails);
-        rightContent.append(priority, due_date, menuWrapper);
+        rightContent.append(due_date, priority, menuWrapper);
         li.append(leftContent, rightContent)
         container.appendChild(li);
 
